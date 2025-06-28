@@ -1,12 +1,15 @@
-#!/bin/bash
+echo "BUILD START"
 
-# Build the project
-echo "Building the project..."
+# create a virtual environment named 'venv' if it doesn't already exist
+python3.9 -m venv venv
+
+# activate the virtual environment
+source venv/bin/activate
+
+# install all deps in the venv
 pip install -r requirements.txt
 
-# echo "Make Migration..."
-# python manage.py makemigrations
-# python manage.py migrate 
+# collect static files using the Python interpreter from venv
+python manage.py collectstatic --noinput
 
-echo "Collect Static..."
-python3.9 manage.py collectstatic
+echo "BUILD END"
