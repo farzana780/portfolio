@@ -12,8 +12,8 @@
       "dest": "portfolio_project/wsgi.py"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "src": "static/(.*)",
+      "dest": "static/$1"
     }
   ]
 }
